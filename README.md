@@ -6,14 +6,13 @@
 
 ## Seesion 1 :
 
-- ### :green_book: [Theory Assignment](./Session-1/theory/)
-- ### :man_technologist: [Coding Assignment](./Session-1/code/)
+- ### :green_book: [Theory Assignment](./Session-1%20Inception/theory/)
+- ### :man_technologist: [Coding Assignment](./Session-1%20Inception/code/)
 
 ## Session 2 :
 
-- ### :green_book: [Theory Assignment](./Session-2/theory/)
-- ### :man_technologist: [Coding Assignment](./Session-2/code/)
-- ### :open_book: [Notes](./Session-2/theory/notes.md)
+- ### :green_book: [Theory Assignment](./Session-2%20Igniting%20our%20App/theory/)
+- ### :man_technologist: [Coding Assignment](./Session-2%20Igniting%20our%20App/code)
 
 ## Session 3 :
 
