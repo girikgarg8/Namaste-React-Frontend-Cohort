@@ -16,9 +16,9 @@
 
 ## Session 3 :
 
-- ### :green_book: [Theory Assignment](./Session-3/theory/)
-- ### :man_technologist: [Coding Assignment](./Session-3/code/)
-- ### :open_book: [Notes](./Session-3/theory/notes%20.md)
+- ### :green_book: [Theory Assignment](./Session-3%20Laying%20the%20Foundation/theory/)
+- ### :man_technologist: [Coding Assignment](./Session-3%20Laying%20the%20Foundation/code/)
+- ### :open_book: [Notes](./Session-3%20Laying%20the%20Foundation/theory/Notes.md)
 
 ## Session 4 :
 

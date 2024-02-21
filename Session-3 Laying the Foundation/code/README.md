@@ -1,0 +1,1 @@
+`JSX` at the end is converted to `React.createElement`. See this in action [here](https://babeljs.io/repl)

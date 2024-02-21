@@ -43,4 +43,6 @@ const heading = React.createElement(
 console.log(heading);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(heading); //render method converts Javascript object to HTML tag
+
+// React.createElement (returns a React element - JS Object) => HTML element (by render)
+root.render(heading); 
