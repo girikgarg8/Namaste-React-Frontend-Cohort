@@ -13,4 +13,4 @@ The low level details were documented here: [Low level details](../Low-Level-Des
 - Virtual DOM
 - React reconciliation
 
-Application: [here](https://hilarious-crumble-916bc6.netlify.app/)
+Application: [here]()
