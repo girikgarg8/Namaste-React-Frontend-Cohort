@@ -1,0 +1,3 @@
+Props (short form for properties) are nothing but a normal Javascript object. Passing props to a component is essentially passing arguments to the functional component.
+
+**Config Driven UI** : It is a pattern of software development where the UI being rendered on the frontend is dynamic according to the data sent by the backend APIs. The config fro m the backend "drives" the UI. As an example, the Swiggy API shows different carousels (a banner to show the offers) in different cities. 

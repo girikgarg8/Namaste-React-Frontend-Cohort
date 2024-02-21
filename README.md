@@ -22,9 +22,9 @@
 
 ## Session 4 :
 
-- ### :green_book: [Theory Assignment](./Session-4/theory/)
-- ### :man_technologist: [Coding Assignment](./Session-4/code/)
-- ### :open_book: [Notes](./Session-4/theory/notes.md)
+- ### :green_book: [Theory Assignment](./Session-4%20Talk%20is%20cheap,%20show%20me%20the%20code/theory/)
+- ### :man_technologist: [Coding Assignment](./Session-4%20Talk%20is%20cheap,%20show%20me%20the%20code/code/)
+- ### :open_book: [Notes](./Session-4%20Talk%20is%20cheap,%20show%20me%20the%20code/theory/Notes.md)
 
 ## Session 5 :
 

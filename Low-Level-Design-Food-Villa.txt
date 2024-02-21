@@ -1,0 +1,14 @@
+Header
+    Logo
+    Nav Items
+
+Body
+    Search Bar
+    Restuarant Card Container
+        Restuarant Card
+
+Footer
+    Copyright
+    Address
+    Link
+    Component
