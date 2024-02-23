@@ -28,8 +28,8 @@
 
 ## Session 5 :
 
-- ### :green_book: [Theory Assignment](./Session-5/theory/)
-- ### :man_technologist: [Coding Assignment](./Session-5/code/)
+- ### :green_book: [Theory Assignment](./Session-5%20Let%27s%20get%20hooked/theory)
+- ### :man_technologist: [Coding Assignment](./Session-5%20Let%27s%20get%20hooked/code/)
 
 ## Session 6 :
 
