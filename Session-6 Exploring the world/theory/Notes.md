@@ -87,6 +87,19 @@ As discussed before, we want to fetch the API response after the initial render 
 
 When using fetch(), it returns a promise. The body key of this resolved promise contains the data in the form of a `ReadableStream`, and the data needs to be converted to `JSON` before it can be parsed. For converting the data from `ReadableStream` to `JSON`, we use the `json()` function.
 
+**Let's discuss about optional chaining:** 
+
+If we try to access a property from an undefined or null object, it throws an error. Instead, if we use optional chaining, the expression short circuits to null instead of throwing an error.
+
+See the example below:
+```
+const obj = undefined
+
+console.log(obj.marks) //throws an error
+ 
+console.log(obj?.marks) //returns an undefined
+```
+
 When we first try to make a call to Swiggy's API from localhost, it will block us due to CORS policy. This is the exact error we'll get in the console:
 
 ```
@@ -217,3 +230,7 @@ In our current project, for local testing, we have setup a CORS proxy server. Lo
 Since the browser interprets the call to the proxy server as a request to the same origin, it doesn't report a CORS policy violation.
 
 4. Use online websites like `corsproxy.org`, they behave similar to the extensions discussed in part 2. We are using this for production builds.
+
+**Let's learn and implement Shimmer UI**
+
+As a fallback UI, we can show a loader or a custom message like 'Loading'. However, shimmer is a good user experience to show as a fallback UI, because it gives the user a preview of what the page is going to look like. We can create our own shimmer or use NPM packages to create it. In the current implementation, we are creating a shimmer through NPM package as it gives a better user experience than creating a shimmer on our own.

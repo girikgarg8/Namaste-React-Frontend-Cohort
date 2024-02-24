@@ -1,6 +1,7 @@
 import { SWIGGY_RESTAURANTS_API_URL } from "../../utils/constants.js";
 import RestaurantCard from "./RestaurantCard.js";
 import { useEffect, useState } from "react";
+import { Shimmer, Breathing } from "react-shimmer";
 
 const Body = () => {
   const [fetchedRestaurants, setFetchedRestaurants] = useState([]);
@@ -21,38 +22,41 @@ const Body = () => {
     fetchRestaurants();
   }, []);
 
+  if (filteredRestaurants.length === 0) {
+    const shimmerCards = [];
+    for (let i = 0; i < 20; i++) {
+      shimmerCards.push(
+        <Breathing height={390} width={194} className="shimmer-card" />
+      );
+    }
+    return <div className="shimmer-container">{shimmerCards}</div>;
+  }
   return (
     <div className="body">
       <div className="filter">
-        {Object.keys(fetchedRestaurants).length != 0 && (
-          <button
-            className={
-              isFiltered ? "filter-btn-selected" : "filter-btn-not-selected"
+        <button
+          className={
+            isFiltered ? "filter-btn-selected" : "filter-btn-not-selected"
+          }
+          onClick={() => {
+            if (!isFiltered) {
+              const filteredresList = filteredRestaurants.filter(
+                (restaurant) => restaurant.info.avgRating >= 4.5
+              );
+              setFilteredRestaurants(filteredresList);
+            } else {
+              setFilteredRestaurants(fetchedRestaurants);
             }
-            onClick={() => {
-              if (!isFiltered) {
-                const filteredresList = filteredRestaurants.filter(
-                  (restaurant) => restaurant.info.avgRating >= 4.5
-                );
-                setFilteredRestaurants(filteredresList);
-              } else {
-                setFilteredRestaurants(fetchedRestaurants);
-              }
-              setIsFiltered(!isFiltered);
-            }}
-          >
-            4.5+ rated restaurants
-          </button>
-        )}
+            setIsFiltered(!isFiltered);
+          }}
+        >
+          4.5+ rated restaurants
+        </button>
       </div>
       <div className="res-container">
-        {Object.keys(fetchedRestaurants).length === 0 ? (
-          <h1> Loading, please wait </h1>
-        ) : (
-          filteredRestaurants.map((resObj) => (
-            <RestaurantCard key={resObj.info.id} resData={resObj} />
-          ))
-        )}
+        {filteredRestaurants.map((resObj) => (
+          <RestaurantCard key={resObj.info.id} resData={resObj} />
+        ))}
       </div>
     </div>
   );
