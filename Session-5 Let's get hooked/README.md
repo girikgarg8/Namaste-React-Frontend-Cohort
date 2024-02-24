@@ -6,7 +6,7 @@ The low level details were documented here: [Low level details](../Low-Level-Des
 
 ## Topics covered in this session:
 
-- Let's modulerise our app
+- Let's modularize our app
 - Components
 
 Application: [here](https://foodvilla-girik.vercel.app/)

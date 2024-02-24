@@ -1,5 +1,5 @@
 import RestaurantCard from "./RestaurantCard";
-import restaurantList from "../utils/mockData.js";
+import restaurantList from "../../utils/mockData.js";
 import { useEffect, useState } from "react";
 
 const Body = () => {

@@ -85,6 +85,10 @@ body {
   background-color: green;
 }
 
+.filter-btn-selected {
+  background-color: green;
+}
+
 .filter-btn-not-selected {
-  background-color: #f0f0f0;
+  background-color: #f0f0f0
 }
