@@ -15,7 +15,7 @@ const Contact = () => {
         <ul>
           <li>
             Shoot me an email &nbsp;&nbsp;
-            <a href="mailto:someone@example.com">
+            <a href="mailto:girikgarg8@gmail.com">
               <FontAwesomeIcon icon={faEnvelope} />{" "}
             </a>
           </li>

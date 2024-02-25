@@ -1,8 +1,11 @@
 {
+  "homepage": "https://girikgarg8.github.io/Namaste-React-Frontend-Cohort",
   "name": "namaste-react",
   "version": "1.0.0",
   "description": "Namaste React Frontend Cohort",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "parcel index.html",
     "build": "parcel build index.html",
     "test": "jest"
@@ -35,6 +38,7 @@
     "@fortawesome/free-regular-svg-icons": "^6.5.1",
     "@fortawesome/free-solid-svg-icons": "^6.5.1",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "gh-pages": "^6.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.22.1",
