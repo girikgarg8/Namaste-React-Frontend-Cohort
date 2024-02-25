@@ -234,3 +234,44 @@ Since the browser interprets the call to the proxy server as a request to the sa
 **Let's learn and implement Shimmer UI**
 
 As a fallback UI, we can show a loader or a custom message like 'Loading'. However, shimmer is a good user experience to show as a fallback UI, because it gives the user a preview of what the page is going to look like. We can create our own shimmer or use NPM packages to create it. In the current implementation, we are creating a shimmer through NPM package as it gives a better user experience than creating a shimmer on our own.
+
+**Conditional Rendering**
+
+Conditional rendering means rendering different components according to some condition. As an example, if the list of restaurants has not been fetched we show a fallback UI, else we show the restaurant cards.
+
+Let's understand some more points related to `useState` hook :
+
+Consider the code snippet below:
+
+```
+const Header = () => {
+  console.log('Header rendered');
+  const [loggedIn, setLoggedIn] = useState(false);
+  return (
+    <div className="header">
+      <div className="logo-container">
+        <img className="logo" src={LOGO_URL} />
+      </div>
+      <div className="nav-items">
+        <ul>
+          <li> Home </li>
+          <li> About</li>
+          <li> Contact</li>
+          <li> Cart </li>
+          <button onClick={() => setLoggedIn(!loggedIn)}> {loggedIn ? "Logout" : "Login"} </button>
+        </ul>
+      </div>
+    </div>
+  );
+};
+
+export default Header;
+```
+
+Q. When the value of the state variable `loggedIn` changes, does the entire `Header` component get re-rendered or only the button is re-rendered?
+
+A. When the value of the state variable `loggedIn` changes, the entire `Header` component gets re-rendered (This is confirmed from the console log statement). However, due to the efficient React diff algorithm, React knows beforehand what to manipulate in the DOM, hence the re-render is very quick.
+
+Q. `loggedIn` and `setLoggedIn` are both const variables, how is the `setLoggedIn` function then able to change the value of `loggedIn` variable?
+
+A. Good question. When the `setLoggedIn` function is called, it triggers a re-render of the component. The variable `loggedIn` after the render and before the render are different, so we are not actually modifying the value of `loggedIn` state variable, the variables themselves are different before and after the render.

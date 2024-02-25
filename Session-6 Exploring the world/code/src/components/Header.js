@@ -6,12 +6,13 @@ const Header = () => {
       <div className="logo-container">
         <img className="logo" src={LOGO_URL} />
       </div>
+      <h2 className="heading"> Welcome to Foodvilla </h2>
       <div className="nav-items">
         <ul>
           <li> Home </li>
           <li> About</li>
           <li> Contact</li>
-          <li> Cart </li>
+          <li> Cart (0)</li>
         </ul>
       </div>
     </div>
