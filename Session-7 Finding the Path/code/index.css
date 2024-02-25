@@ -1,0 +1,283 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.header {
+  display: flex;
+  background-color: #15605e;
+  color: #fff;
+  padding: 32px;
+  justify-content: space-between;
+  @media (max-width: 1000px) {
+    flex-direction: column;
+    padding-bottom: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+.logo {
+  height: 100px;
+  @media (max-width: 1000px) {
+    display: block;
+    margin: auto;
+  }
+}
+
+.heading{
+  @media (min-width: 1001px){
+    padding-left: 19%;
+    padding-right: 10%;
+    padding-top: 20px;
+  }
+  @media (max-width: 1000px){
+    display: none;
+  }
+}
+.nav-items {
+  @media (min-width: 1001px) {
+    margin-top: 30px;
+    margin-left: 20px;
+  }
+  @media (max-width: 1000px) {
+    margin-top: 20px;
+    width: 100%;
+  }
+}
+.nav-items ul {
+  display: flex;
+  gap: 19px;
+  padding: 0;
+  @media (max-width: 1000px) {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+.nav-items ul a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.nav-items ul a:hover {
+  color: #AAFF00
+}
+
+.res-container {
+  width: 90%;
+  margin: 40px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  padding-bottom: 50px;
+}
+
+.res-card {
+  padding: 16px;
+  width: 200px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px 0 gray;
+}
+
+.res-card:hover {
+  cursor: pointer;
+  border: 1px solid black;
+}
+.res-logo {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.search{
+  display: flex;
+  justify-content:space-around;
+  padding-top: 25px;
+}
+
+.search-btn{
+  width: 85%;
+  height: 25px;
+  text-align: center;
+  cursor: text;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.filter {
+  display: flex;
+  justify-content: center;
+  margin: 32px 0 0 32px;
+  @media (min-width:1001px) {
+    padding-right: 2.5%;
+  }
+  @media (max-width:1000px){
+    padding-right: 7%;
+  }
+}
+
+.filter-btn-selected {
+  background-color: #AAFF00;
+  cursor: pointer;
+  border: 1px solid black;
+  border-radius: 3px;
+}
+
+.filter-btn-not-selected {
+  background-color: #f0f0f0;
+  cursor: pointer;
+  border: 1px solid black;
+  border-radius: 3px;
+}
+
+.shimmer-container {
+  width: 90%;
+  margin: 77px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+
+.shimmer-card {
+  padding: 16px;
+  width: 200px;
+  border-radius: 5px;
+}
+
+.about-heading{
+  text-align: center;
+  padding-top: 20px;
+  padding-right: 5%;
+}
+
+.about-text{
+  text-align: center;
+  padding-top: 15px;
+  padding-left: 5%;
+  padding-right: 6.5%;
+  font-size: 20px;
+}
+
+.about-linkedin {
+  text-align: center;
+  padding-top: 15px;
+  padding-left: 5%;
+  padding-right: 9%;
+  font-size: 20px;
+}
+
+.about-linkedin-icon{
+  height: 20px;
+  width: 20px;
+}
+
+.footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 45px;
+  background-color: #15605e;
+  color: white;
+}
+
+.about-wave-bye-container{
+  padding-top: 60px;
+  display: flex;
+  justify-content: center;
+}
+
+.about-wave-bye{
+  width: 280px;
+  height: 270px;
+}
+
+.not-found-container{
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.not-found-text{
+  font-size: 25px;
+  text-align: center;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.not-found-redirection{
+  font-size: 20px;
+  text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.not-found-redirection a{
+  text-decoration: none;
+}
+.not-found-img{
+  width: 100%;
+  height: 100%;
+  max-width: 450px;
+  max-height: 450px;
+}
+
+.contact-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+}
+
+.contact-heading{
+  text-align: center;
+  font-size: 28px;
+  padding-right: 5%;
+}
+
+.contact-lets-connect{
+  font-size: 24px;
+  padding-right: 5%;
+  @media (max-width: 1000px) {
+    padding-left: 4%;
+    padding-right: 8%;
+  }
+}
+
+.contact-container ul{
+  list-style-type: none;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 0px;
+  padding-right: 25px;
+  padding-left: 25px;
+}
+
+.contact-container ul li{
+  @media (min-width: 1001px) {
+    padding-right: 90px;
+  }
+  text-align: center;
+  font-size: 18px;
+  margin-top: 40px;
+}
+
+.contact-footer-icon{
+  @media (min-width: 1001px){
+    padding-top: 40px;
+    padding-right: 8%;
+    width: 310px;
+  }
+  padding-top: 30px;
+  width: 290px;
+  height: 150px;
+}
