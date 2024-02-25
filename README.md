@@ -33,8 +33,8 @@
 
 ## Session 6 :
 
-- ### :green_book: [Theory Assignment](./Session-6/theory/)
-- ### :man_technologist: [Coding Assignment](./Session-6/code/)
+- ### :green_book: [Theory Assignment](./Session-6%20Exploring%20the%20world/theory)
+- ### :man_technologist: [Coding Assignment](./Session-6%20Exploring%20the%20world/code)
 
 ## Session 7 :
 

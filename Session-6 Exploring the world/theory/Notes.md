@@ -85,7 +85,7 @@ As discussed before, we want to fetch the API response after the initial render 
 
 `fetch()` is not provided by Javascript, it is provided by the runtime environment of Javascript.
 
-When using fetch(), it returns a promise. The body key of this resolved promise contains the data in the form of a `ReadableStream`, and the data needs to be converted to `JSON` before it can be parsed. For converting the data from `ReadableStream` to `JSON`, we use the `json()` function.
+When using fetch(), it returns a promise. The body key of this resolved promise contains the data in the form of a `ReadableStream`, and the data needs to be converted to `JSON` before it can be parsed. For converting the data from `ReadableStream` to `Javascript object`, we use the `json()` function.
 
 **Let's discuss about optional chaining:** 
 
@@ -231,6 +231,8 @@ Since the browser interprets the call to the proxy server as a request to the sa
 
 4. Use online websites like `corsproxy.org`, they behave similar to the extensions discussed in part 2. We are using this for production builds.
 
+5. Set the `Access-Control-Allow-Origin` and `Access-Control-Allow-Methods` headers in the backend API. This is feasible if we have access to the backend APIs codebase.
+
 **Let's learn and implement Shimmer UI**
 
 As a fallback UI, we can show a loader or a custom message like 'Loading'. However, shimmer is a good user experience to show as a fallback UI, because it gives the user a preview of what the page is going to look like. We can create our own shimmer or use NPM packages to create it. In the current implementation, we are creating a shimmer through NPM package as it gives a better user experience than creating a shimmer on our own.
@@ -275,3 +277,5 @@ A. When the value of the state variable `loggedIn` changes, the entire `Header` 
 Q. `loggedIn` and `setLoggedIn` are both const variables, how is the `setLoggedIn` function then able to change the value of `loggedIn` variable?
 
 A. Good question. When the `setLoggedIn` function is called, it triggers a re-render of the component. The variable `loggedIn` after the render and before the render are different, so we are not actually modifying the value of `loggedIn` state variable, the variables themselves are different before and after the render.
+
+**Whenever a state variable is updated in React, it triggers a re-render of the entire component with the help of reconciliation algorithm.**

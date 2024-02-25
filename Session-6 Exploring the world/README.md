@@ -5,3 +5,14 @@ The low level details were documented here: [Low level details](../Low-Level-Des
 In case the Swiggy API contract/ Cloudinary CDN URL changes, please update the URL [here](./code/utils/constants.js) and make the relevant destructuring changes in [Body Component](./code/src/components/Body.js) and [RestaurantCard Component](./code/src/components/RestaurantCard.js)
 
 We are using a CORS proxy in order to avoid CORS policy errors. Refer [this](./theory/Notes.md) for more details.
+
+## Topics covered in this session:
+
+- Microservices v/s Monolith services
+- useEffect Hook
+- Shimmer Effect
+- CORS
+- Optional chaining
+
+
+### **Live Link: [here](https://foodvilla-gg-app.vercel.app/)**

@@ -12,7 +12,7 @@ const Body = () => {
 
   const filterRestaurantsOnRating = (resList) => {
     const filteredresList = resList.filter(
-      (restaurant) => restaurant.info.avgRating >= 4.5
+      (restaurant) => restaurant?.info?.avgRating >= 4.5
     );
     return filteredresList;
   };
@@ -60,7 +60,7 @@ const Body = () => {
     if (isFiltered) {
       const filteredresList = filterRestaurantsOnRating(renderRestaurants);
       setRenderRestaurants(filteredresList);
-    } else if (searchRestaurants.length != 0) {
+    } else if (searchRestaurants?.length != 0) {
       setRenderRestaurants(searchRestaurants);
     } else {
       setRenderRestaurants(fetchedRestaurants);
