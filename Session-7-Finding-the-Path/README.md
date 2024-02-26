@@ -10,4 +10,8 @@ In case the Swiggy API contract/ Cloudinary CDN URL changes, please update the U
 
 
 
-### **Live Link: [here]()**
+### **Live Link: [here](https://foodvilla-app-gg.netlify.app/)**
+
+Here's a snapshot of the configuration needed to deploy the application on Netlify:
+
+![Session-7-Finding-the-Path/Netlify-configuration-build](./Netlify-configuration-build.png)

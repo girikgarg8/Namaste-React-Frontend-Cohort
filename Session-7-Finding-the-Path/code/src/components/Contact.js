@@ -1,5 +1,4 @@
 import Header from "./Header";
-import Footer from "./Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { faLinkedin, faTwitter } from "@fortawesome/free-brands-svg-icons";
@@ -37,7 +36,6 @@ const Contact = () => {
         </ul>
         <img src={FooterIcon} className="contact-footer-icon"/>
       </div>
-      <Footer />
     </>
   );
 };

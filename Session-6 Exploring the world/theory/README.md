@@ -37,7 +37,7 @@ useEffect(() => {
     setCurrentState("true");
 }, [currentState])
 ```
-If we do not pass empty dependency array then the useEffect runs everytime when the UI is rendered.
+If we do not pass empty dependency array then the useEffect runs everytime when the component is rendered.
 
 ```
 useEffect(() => {})

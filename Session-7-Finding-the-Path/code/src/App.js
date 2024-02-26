@@ -15,7 +15,6 @@ const AppLayout = () => {
     <div className="app">
       <Header />
       <Body />
-      <Footer />
     </div>
   );
 };
@@ -31,7 +30,7 @@ const router = createBrowserRouter([
   },
   {
     path: "contact",
-    element: <Contact/>,
+    element: <Contact />,
   },
   {
     path: "*",
@@ -39,8 +38,4 @@ const router = createBrowserRouter([
   },
 ]);
 
-root.render(
-  <RouterProvider router={router}>
-    <AppLayout />
-  </RouterProvider>
-);
+root.render(<RouterProvider router={router}> </RouterProvider>);

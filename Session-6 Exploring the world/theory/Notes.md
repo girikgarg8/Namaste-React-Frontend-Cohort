@@ -75,7 +75,7 @@ Important cases in `useEffect`:
 
 1. If an empty dependency array is passed, the component re-renders only after the initial re-render.
 
-2. If the dependency array is not passed, then the component re-renders after the initial re-render and on every state variable update.
+2. If the dependency array is not passed, then the component re-renders after the initial re-render and on every state variable and prop update. Basically, it means that the useEffect will be called on every component re-render, and re-render will occur on every state variable/prop change.
 
 **How is `useEffect` suitable for our usecase?**
 

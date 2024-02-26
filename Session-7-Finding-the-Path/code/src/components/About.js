@@ -1,7 +1,6 @@
 import Header from "./Header";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import Footer from "./Footer";
 import WaveBye from "../assets/Wave-Bye-Sticker.gif";
 
 const About = () => {
@@ -21,7 +20,6 @@ const About = () => {
       <div className="about-wave-bye-container">
         <img src={WaveBye} className="about-wave-bye" />
       </div>
-      <Footer />
     </div>
   );
 };
