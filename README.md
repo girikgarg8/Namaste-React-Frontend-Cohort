@@ -38,8 +38,8 @@
 
 ## Session 7 :
 
-- ### :green_book: [Theory Assignment](./Session-7/theory/)
-- ### :man_technologist: [Coding Assignment](./Session-7/code/)
+- ### :green_book: [Theory Assignment](./Session-7-Finding-the-Path/theory/)
+- ### :man_technologist: [Coding Assignment](./Session-7-Finding-the-Path/code)
 
 ## Session 8 :
 

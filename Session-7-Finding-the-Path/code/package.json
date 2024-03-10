@@ -42,7 +42,9 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.22.1",
-    "react-shimmer": "^3.2.0"
+    "react-shimmer": "^3.2.0",
+    "react-spinner-loader": "^1.1.1",
+    "tailwindcss": "^3.4.1"
   },
   "browserslist": [
     "last 2 versions"

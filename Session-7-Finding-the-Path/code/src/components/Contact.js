@@ -1,4 +1,3 @@
-import Header from "./Header";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { faLinkedin, faTwitter } from "@fortawesome/free-brands-svg-icons";
@@ -7,7 +6,6 @@ import FooterIcon from "../assets/Lets-Connect.jpg";
 const Contact = () => {
   return (
     <>
-      <Header />
       <div className="contact-container">
         <h2 className="contact-heading"> Need to get in touch? </h2>
         <p className="contact-lets-connect"> Would love to collaborate! </p>

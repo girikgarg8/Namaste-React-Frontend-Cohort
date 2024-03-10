@@ -25,13 +25,13 @@ body {
   }
 }
 
-.heading{
-  @media (min-width: 1001px){
+.heading {
+  @media (min-width: 1001px) {
     padding-left: 19%;
     padding-right: 10%;
     padding-top: 20px;
   }
-  @media (max-width: 1000px){
+  @media (max-width: 1000px) {
     display: none;
   }
 }
@@ -61,7 +61,7 @@ body {
 }
 
 .nav-items ul a:hover {
-  color: #AAFF00
+  color: #aaff00;
 }
 
 .res-container {
@@ -72,6 +72,11 @@ body {
   justify-content: center;
   gap: 16px;
   padding-bottom: 50px;
+}
+
+.res-container a {
+  text-decoration: none;
+  color: black;
 }
 
 .res-card {
@@ -90,13 +95,13 @@ body {
   border-radius: 5px;
 }
 
-.search{
+.search {
   display: flex;
-  justify-content:space-around;
+  justify-content: space-around;
   padding-top: 25px;
 }
 
-.search-btn{
+.search-btn {
   width: 85%;
   height: 25px;
   text-align: center;
@@ -109,16 +114,16 @@ body {
   display: flex;
   justify-content: center;
   margin: 32px 0 0 32px;
-  @media (min-width:1001px) {
+  @media (min-width: 1001px) {
     padding-right: 2.5%;
   }
-  @media (max-width:1000px){
+  @media (max-width: 1000px) {
     padding-right: 7%;
   }
 }
 
 .filter-btn-selected {
-  background-color: #AAFF00;
+  background-color: #aaff00;
   cursor: pointer;
   border: 1px solid black;
   border-radius: 3px;
@@ -146,13 +151,13 @@ body {
   border-radius: 5px;
 }
 
-.about-heading{
+.about-heading {
   text-align: center;
   padding-top: 20px;
   padding-right: 5%;
 }
 
-.about-text{
+.about-text {
   text-align: center;
   padding-top: 15px;
   padding-left: 5%;
@@ -168,12 +173,12 @@ body {
   font-size: 20px;
 }
 
-.about-linkedin-icon{
+.about-linkedin-icon {
   height: 20px;
   width: 20px;
 }
 
-.footer{
+.footer {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -186,32 +191,32 @@ body {
   color: white;
 }
 
-.about-wave-bye-container{
+.about-wave-bye-container {
   padding-top: 60px;
   display: flex;
   justify-content: center;
 }
 
-.about-wave-bye{
+.about-wave-bye {
   width: 280px;
   height: 10%;
 }
 
-.not-found-container{
+.not-found-container {
   padding-top: 0px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.not-found-text{
+.not-found-text {
   font-size: 25px;
   text-align: center;
   padding-left: 15px;
   padding-right: 15px;
 }
 
-.not-found-redirection{
+.not-found-redirection {
   margin-top: 0px;
   font-size: 20px;
   text-align: center;
@@ -219,30 +224,30 @@ body {
   padding-right: 10px;
 }
 
-.not-found-redirection a{
+.not-found-redirection a {
   text-decoration: none;
 }
-.not-found-img{
+.not-found-img {
   width: 100%;
   height: 100%;
   max-width: 450px;
   max-height: 450px;
 }
 
-.contact-container{
+.contact-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 20px;
 }
 
-.contact-heading{
+.contact-heading {
   text-align: center;
   font-size: 28px;
   padding-right: 5%;
 }
 
-.contact-lets-connect{
+.contact-lets-connect {
   font-size: 24px;
   padding-right: 5%;
   margin-top: 10px;
@@ -252,7 +257,7 @@ body {
   }
 }
 
-.contact-container ul{
+.contact-container ul {
   list-style-type: none;
   display: flex;
   flex-wrap: nowrap;
@@ -265,7 +270,7 @@ body {
   padding-left: 25px;
 }
 
-.contact-container ul li{
+.contact-container ul li {
   @media (min-width: 1001px) {
     padding-right: 90px;
   }
@@ -274,8 +279,8 @@ body {
   margin-top: 30px;
 }
 
-.contact-footer-icon{
-  @media (min-width: 1001px){
+.contact-footer-icon {
+  @media (min-width: 1001px) {
     padding-top: 30px;
     padding-right: 8%;
     width: 310px;
@@ -283,4 +288,122 @@ body {
   padding-top: 30px;
   width: 290px;
   height: 150px;
+}
+
+.error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.error-heading {
+  @media (min-width: 1001px) {
+    padding-right: 5%;
+  }
+}
+
+.error-message {
+  @media (min-width: 1001px) {
+    padding-right: 6%;
+  }
+}
+
+.error-not-found-redirection {
+  margin-top: 20px;
+  font-size: 20px;
+  text-align: center;
+  @media (max-width: 1000px) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  @media (min-width: 1001px) {
+    padding-right: 40px;
+  }
+}
+
+.error-not-found-redirection a {
+  text-decoration: none;
+}
+
+.menu {
+  text-align: center;
+}
+
+.menu-restaurant-title {
+  font-weight: bold;
+  margin-top: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.menu-cuisines {
+  font-weight: bold;
+  font-size: 1.125rem;
+}
+
+.accordion-header {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  background-color: rgb(249 250 251);
+  padding: 1rem;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+.accordion-body {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  user-select: none;
+}
+
+.accordion-header-title {
+  font-weight: bold;
+}
+
+.menu-item {
+  padding: 0.5rem;
+  margin: 0.5rem;
+  border-bottom: 2px solid rgb(229 231 235);
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu-header {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.accordion-body-description {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+.accordion-outer {
+  width: 75%;
+}
+
+.accordion-image-container {
+  width: 25%;
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.accordion-image {
+  width: 100%;
+  @media (max-width: 650px) {
+    display: none;
+  }
+}
+
+.accordion-button {
+  @media (max-width: 650px) {
+    margin: auto;
+  }
+  border: 1px solid black;
+  border-radius: 5px;
+  cursor: pointer;
 }

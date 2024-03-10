@@ -1,7 +1,9 @@
 import { SWIGGY_RESTAURANTS_API_URL } from "../../utils/constants.js";
 import RestaurantCard from "./RestaurantCard.js";
 import { useEffect, useState } from "react";
+import resList from "../../utils/mockData.js";
 import { Breathing } from "react-shimmer";
+import { Link } from "react-router-dom";
 
 const Body = () => {
   const [fetchedRestaurants, setFetchedRestaurants] = useState([]);
@@ -50,8 +52,13 @@ const Body = () => {
       const restaurantsList =
         restaurantData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants;
-      setFetchedRestaurants(restaurantsList);
-      setRenderRestaurants(restaurantsList);
+      if (restaurantsList === undefined) {
+        setFetchedRestaurants(resList);
+        setRenderRestaurants(resList);
+      } else {
+        setFetchedRestaurants(restaurantsList);
+        setRenderRestaurants(restaurantsList);
+      }
     }
     fetchRestaurants();
   }, []);
@@ -101,7 +108,9 @@ const Body = () => {
       </div>
       <div className="res-container">
         {renderRestaurants.map((resObj) => (
-          <RestaurantCard key={resObj?.info?.id} resData={resObj} />
+          <Link to={"/restaurants/" + resObj?.info?.id} key={resObj?.info?.id}>
+            <RestaurantCard resData={resObj} />{" "}
+          </Link>
         ))}
       </div>
     </div>

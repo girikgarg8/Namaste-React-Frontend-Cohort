@@ -1,4 +1,3 @@
-import Header from "./Header";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import WaveBye from "../assets/Wave-Bye-Sticker.gif";
@@ -6,7 +5,6 @@ import WaveBye from "../assets/Wave-Bye-Sticker.gif";
 const About = () => {
   return (
     <div className="app">
-      <Header />
       <h2 className="about-heading"> Hello there! 👋</h2>
       <p className="about-text">
         This is Namaste Villa, a food ordering platform designed by Girik Garg
