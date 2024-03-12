@@ -1,5 +1,5 @@
 import { SWIGGY_RESTAURANTS_API_URL } from "../../utils/constants.js";
-import RestaurantCard from "./RestaurantCard.js";
+import RestaurantCard, { withTopRatedLabel } from "./RestaurantCard.js";
 import { useEffect, useState } from "react";
 import resList from "../../utils/mockData.js";
 import { Breathing } from "react-shimmer";
@@ -17,6 +17,7 @@ const Body = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userName, setUserName] = useState("");
   const userContext = useContext(UserContext);
+  const RestaurantCardWithTopRatedLabel = withTopRatedLabel(RestaurantCard);
 
   const filterRestaurantsOnRating = (resList) => {
     const filteredresList = resList.filter(
@@ -139,7 +140,11 @@ const Body = () => {
       <div className="res-container">
         {renderRestaurants.map((resObj) => (
           <Link to={"/restaurants/" + resObj?.info?.id} key={resObj?.info?.id}>
-            <RestaurantCard resData={resObj} />{" "}
+            {resObj?.info?.avgRating >= 4.5 ? (
+              <RestaurantCardWithTopRatedLabel resData={resObj} />
+            ) : (
+              <RestaurantCard resData={resObj} />
+            )}
           </Link>
         ))}
       </div>

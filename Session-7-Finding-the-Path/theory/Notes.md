@@ -176,7 +176,15 @@ A higher order component is used because it takes a component as a parameter, pe
 
 ![Higher-Order-Component-Swiggy](./Higher-Order-Component-Swiggy.png)
 
-We can see from the image above that certain restaurant cards display discount offers. But these restaurant cards are pretty much the same as any other card which don't have an offer. So, we are actually rendering a Higher Order Component (HOC) to show the card with the offer. We are passing each restaurant card to the HOC, which checks whether the restaurant has a discount offer or not (from the backend API response), and affixes the discount information on the restaurant code. These HOCs are then rendered in the Menu Component.
+We can see from the image above that certain restaurant cards display discount offers. But these restaurant cards are pretty much the same as any other card which don't have an offer. So, we are actually rendering a Higher Order Component (HOC) to show the card with the offer. We are passing the restaurant card component to the HOC, which appends the offer label, apart from invoking the `RestaurantCard` component. These HOCs are then rendered in the Body Component.
+
+For our project, we are going to build a feature to display a label `Top rated` for restaurants that have a rating greater than or equal to 4.5.
+
+Before coding a Higher Order Component, first carefully think about the contract of the Higher Order Component - what parameters would the HOC receive and what would it return. It can be confusing to code the HOC without having the contract clear in the mind.
+
+So, for our case, we will have an HOC - a normal Javascript function that takes `RestaurantCard` component as an argument. It would return a new component with the label and internally invoke the `RestaurantCard` component as well. 
+
+Let's see the higher order component in action [here](../code/src/components/RestaurantCard.js) and see this HOC being invoked from [Body Component](../code/src/components/Body.js)
 
 
 We have also built the `Accordion` feature in the restauarant menu here. This was originally discussed in chapter 11 part 2 - `Data is the new Oil`.
