@@ -58,8 +58,8 @@
 
 ## Session 11 :
 
-- ### :green_book: [Theory Assignment](./Session-11/theory/)
-- ### :man_technologist: [Coding Assignment](./Session-11/code/)
+- ### :green_book: [Theory Assignment](./Session-11-Data-is-the-new-Oil/theory/)
+- ### :man_technologist: [Coding Assignment](./Session-11-Data-is-the-new-Oil/code)
 
 ## Session 12 :
 
