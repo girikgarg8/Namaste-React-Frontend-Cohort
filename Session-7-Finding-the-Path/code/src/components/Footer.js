@@ -1,7 +1,13 @@
+import { useContext } from "react";
+import UserContext from "../../utils/UserContext.js";
 const Footer = () => {
+  const userContext = useContext(UserContext);
   return (
     <div className="footer">
-      <div> © 2024 Girik Garg. All rights reserved. </div>
+      <div>
+        Hope you are doing awesome
+        {userContext.userName != "" ? `, ${userContext.userName}` : ""} !
+      </div>
     </div>
   );
 };

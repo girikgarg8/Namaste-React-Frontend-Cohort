@@ -4,6 +4,9 @@ import { useEffect, useState } from "react";
 import resList from "../../utils/mockData.js";
 import { Breathing } from "react-shimmer";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import UserContext from "../../utils/UserContext.js";
+import Footer from "./Footer.js";
 
 const Body = () => {
   const [fetchedRestaurants, setFetchedRestaurants] = useState([]);
@@ -11,6 +14,9 @@ const Body = () => {
   const [searchText, setSearchText] = useState("");
   const [searchRestaurants, setSearchRestaurants] = useState([]);
   const [renderRestaurants, setRenderRestaurants] = useState([]);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userName, setUserName] = useState("");
+  const userContext = useContext(UserContext);
 
   const filterRestaurantsOnRating = (resList) => {
     const filteredresList = resList.filter(
@@ -74,6 +80,29 @@ const Body = () => {
     }
   }, [isFiltered]);
 
+  const handleButtonClick = () => {
+    if (userName != "") {
+      userContext.userName = userName;
+      setIsLoggedIn(true);
+    }
+  };
+
+  if (!isLoggedIn && userContext.userName == "") {
+    return (
+      <div className="login-container">
+        <div className="login-prompt">Your name, please? </div>{" "}
+        <input
+          type="text"
+          onChange={(e) => setUserName(e.target.value)}
+          className="login-button-input"
+        />
+        <button onClick={handleButtonClick} className="login-button-submit">
+          Let's get started !
+        </button>
+      </div>
+    );
+  }
+
   if (fetchedRestaurants.length === 0) {
     const shimmerCards = [];
     for (let i = 0; i < 20; i++) {
@@ -83,6 +112,7 @@ const Body = () => {
     }
     return <div className="shimmer-container">{shimmerCards}</div>;
   }
+
   return (
     <div className="body">
       <div className="search">
@@ -113,6 +143,7 @@ const Body = () => {
           </Link>
         ))}
       </div>
+      <Footer />
     </div>
   );
 };

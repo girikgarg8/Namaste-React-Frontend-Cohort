@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { faLinkedin, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import FooterIcon from "../assets/Lets-Connect.jpg";
+import Footer from "./Footer";
 
 const Contact = () => {
   return (
@@ -32,7 +33,8 @@ const Contact = () => {
             </a>
           </li>
         </ul>
-        <img src={FooterIcon} className="contact-footer-icon"/>
+        <img src={FooterIcon} className="contact-footer-icon" />
+        <Footer />
       </div>
     </>
   );

@@ -108,6 +108,8 @@ body {
   cursor: text;
   border: 1px solid black;
   border-radius: 5px;
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
 
 .filter {
@@ -125,6 +127,8 @@ body {
 .filter-btn-selected {
   background-color: #aaff00;
   cursor: pointer;
+  padding-top: 4px;
+  padding-bottom: 4px;
   border: 1px solid black;
   border-radius: 3px;
 }
@@ -132,6 +136,8 @@ body {
 .filter-btn-not-selected {
   background-color: #f0f0f0;
   cursor: pointer;
+  padding-top: 4px;
+  padding-bottom: 4px;
   border: 1px solid black;
   border-radius: 3px;
 }
@@ -406,4 +412,37 @@ body {
   border: 1px solid black;
   border-radius: 5px;
   cursor: pointer;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.login-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-prompt{
+  margin-top: 3rem;
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+.login-button-input{
+  margin-top: 2rem;
+  height: 20px;
+  font-size: 20px;
+  padding: 4px 7px;
+  font-size: 16px;
+}
+
+.login-button-submit{
+  margin-top: 2.5rem;
+  height: 25px;
+  background-color: #e7e7e7;
+  color: black;
+  border: 1px solid black;
+  border-radius: 2px;
+  padding-top: 2px;
+  padding-bottom: 2px;
 }

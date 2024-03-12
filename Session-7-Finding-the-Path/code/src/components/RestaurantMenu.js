@@ -6,6 +6,7 @@ import {
 } from "../../utils/constants";
 import Loader from "react-spinner-loader";
 import MenuCategory from "./MenuCategory";
+import Footer from "./Footer";
 
 const RestaurantMenu = () => {
   const [resInfo, setResInfo] = useState(null);
@@ -58,9 +59,8 @@ const RestaurantMenu = () => {
     <div className="menu">
       <h1 className="menu-restaurant-title"> {name} </h1>
       <p className="menu-cuisines">
-        {cuisines.join(", ")} - {costForTwoMessage}
+        {cuisines?.join(", ")} - {costForTwoMessage}
       </p>
-
       {categories.map((category, index) => (
         <MenuCategory
           key={category?.card?.card?.title}
@@ -71,6 +71,7 @@ const RestaurantMenu = () => {
           accordionIndex={accordionIndex}
         />
       ))}
+      <Footer />
     </div>
   );
 };
