@@ -45,7 +45,7 @@ When we click on `Add to Cart` from the React app, it **dispatches an action**. 
 
 In order to read data from the store in the React app, we **subscribe to the Redux store using useSelector hook**
 
-**Part-4 Let's code**
+**Part 4 Let's code**
 
 Now that we have understood the architecture of `Redux` well, we can implement Redux store in our app.
 
@@ -131,7 +131,7 @@ Comparison by reference is quicker than comparison by value.
 
 If we want to compare two objects by reference, we can do so by using the strict equality operator `===`
 
-`Redux Toolkit` compares state objects by reference, which means that it checks the memory locations of the previous state object and the current state object to determine whether there is any change in the state. Let's now take a example:
+`Redux Toolkit` compares state objects by reference, which means that it checks the memory locations of the previous state object and the current state object (after dispatchung an action) to determine whether there is any change in the state. Let's now take a example:
 
 ```
 let prevState = {id : 9}
@@ -151,7 +151,7 @@ console.log(prevState === currState)
 
 The code above will output true, because prevState and currState point to the same memory location.
 
-**This is the reason Redux asks us not to mutate the same object directly** : If we mutate the state object directly, the previous state object and the new state object will have the same memory address. Hence, **Redux won't be able to make out that the state object has been changed**
+**This is the reason Redux asks us to return a new object** : If we don't return a new object, the previous state object and the new state object **before and after dispatching the action** will have the same memory address. Hence, **Redux won't be able to make out that the state object has been changed**
 
 The correct way to modify the state object is to use the spread operator, see the code example below:
 
@@ -165,23 +165,25 @@ console.log(obj===obj2)
 
 If we execute the code snippet above, we can see that `obj2` overrided the `id` property to `10` and `name` to `Girik`. We can also see that `obj` and `obj2` point to different memory locations.
 
-This is the way Redux expects us to mutate the state, so that it can make out a difference between the previous state object and current state object. As an example, if we want to add an item "pizza" in `state`, Redux expects us to do it by using:
+This is the way Redux expects us to return a new object, so that it can make out a difference between the previous state object and current state object. As an example, if we want to add an item "pizza" in `state`, Redux expects us to do it by using:
 
 ```
 addItem: (state,action) => {
+  const newList = state.items;
+  newList.push("pizza")
   return {
-    ...state.items, "pizza"
+    ...state, items: newList
   }
 }
 ```
 
-Using the syntax above, we are creating a new array and adding "pizza" to it. The memory locations of the previous state object and the new state object is different, hence **Redux is able to make out that the state has changed**
+Using the syntax above, we are creating a new object and overriding the `items key` of the object. The memory locations of the previous state object and the new state object is different, hence **Redux is able to make out that the state has changed**
 
 But but, writing the syntax by using `spread operator` can become very complex, especially in case of nested objects. Hence, `ReduxJS Toolkit` uses the superpowers of `Immer`. Immer abstracts out the logic of creating a new object and returning it to `Redux`, which makes the developer experience easy. As an example using the following snippet in `ReduxJS Toolkit` :
 
 ```
 addItem : (state,action) => {
-  state.push("pizza")
+  state.items.push("pizza")
 }
 ```
 
@@ -189,9 +191,10 @@ is converted to the following syntax by `Immer` behind the scenes:
 
 ```
 addItem: (state,action) => {
+  const newList = state.items;
+  newList.push("pizza")
   return {
-    ...state,
-    "pizza"
+    ...state, items: newList
   }
 }
 ```
@@ -202,25 +205,18 @@ Now coming back to the original question, we are allowed to use `state.items.len
 
 ```
 clearCart: (state,action) => {
+  const newItemsList = state.items;
+  newItemsList.length = 0;
   return {
     ...state,
-    state.items.length=0
+    items: newItemsList
   }
 }
 ```
 
-which is fine. But we cannot use `state.items=[]` because behind the scenes, it would convert to:
+which is fine. But we cannot use `state.items=[]` because Immer doesn't recognize `state.items=[]` as a valid mutation operation. Immer only recognizes addition, deletion, filtering operations etc. 
 
-```
-clearCart: (state,action) => {
-  return {
-    ...state,
-    state=[]
-  }
-}
-```
-
-which is mutating the state object itself, and hence not correct.
+See [cartSlice](../code/slice/cartSlice.js) for examples of both type of syntax.
 
 Q. Why are we using the statements `export const { addItem, removeItem, clearCart } = cartSlice.actions` and `export default cartSlice.reducer` ?
 
@@ -273,7 +269,7 @@ const Cart = () => {
 }
 ```
 
-We subsscribe to the store using the `useSelector` hook from `react-redux`. Specifically, we are subscribing to the items object in `store.cart`. This is good for performance reasons, because we avoid unecessary re-renders due to other objects in the state being changed.
+We subsscribe to the store using the `useSelector` hook from `react-redux`. Specifically, we are subscribing to the items object in `store.cart.items`. This is good for performance reasons, because we avoid unecessary re-renders due to other objects in the state being changed.
 
 In order to dispatch an action from the React component, we use the following syntax
 
@@ -295,16 +291,132 @@ const Menu = () => {
 In order to dispatch an action, we need to use the `useDispatch` hook from `react-redux`. We call the `dispatch` function with the specific `action`. (which in our case is the `addItem` action). We also pass the required payload to the action (if any). In our case, it is the `item` object which we are passing to the `addItem` action.
 
 So, now we can see the theoretical knowledge about Redux architecture we gained, in action. We `dispatch` an `action` from the React app. The `action` calls a `reducer` function, which updates the `slice` in the `store`. When we need to `subscribe to the store`, we do so by using the `useSelector` hook.
- 
+
 Please review these files in order to understand how to use `RTK` in the application :
 
 [App Store](../code/store/appStore.js)
 
 [Cart Slice](../code/slice/cartSlice.js)
 
-[Cart useDispatch and useSelector](../code/src/components/Cart.js) 
+[Cart useDispatch and useSelector](../code/src/components/Cart.js)
 
 [ItemList useDispatch](../code/src/components/ItemList.js)
 
 [Header useSelector](../code/src/components/Header.js)
 
+**Part 5 Some more information about Redux**
+
+In the syntax `useSelector( (store) => store.cart.items )`, we are subscibing to `store.cart.items` instead of subscribing to the entire store. This is a huge performance optimization, because we don't want the component to re-render in case any other property in the store changes. We only re-render if `store.cart.items` changes.
+
+This is the reason `useSelector` is called `selector`, because we are `selecting` what portion of the store we want to subscribe to.
+
+**Part-6 More information on Redux**
+
+There is some confusion about the two keywords `reducer` and `reducers` being used in Redux. Let's understand about both of them:
+
+1. At the level of a slice, we define multiple actions and their corresponding reducers. Hence, the key is called `reducers`.
+
+2. At the level of store, we have a single reducer object, hence the key is called `reducer`. Think of this like a CEO who manages the CTO. All the engineers are managed by the CTO. Similarly, the `reducer` at the level of the store is a combination of the `reducers` of the individual slices. We combine the reducers of individual slices by using the `combineReducers` API.
+
+**Part-7 Vanilla Redux vs ReduxJS Toolkit (RTK)**
+
+As discussed in Q3 above, in vanilla Redux, as there was no integratiion of `Immer` library, so we were not allowed to write syntax that looked like modifying the state object directly i.e. we cannot write syntax like `state.items.push("pizza")`. Instead, we had to return a new object in the action, something along:
+
+```
+addItem: (state,action) => {
+  const newList = state.items;
+  newList.push("pizza")
+  return {
+    ...state, items: newList
+  }
+}
+```
+
+But in `Redux Toolkit`, in order to improve the developer experience, we do not need to return the new object, as we have `Immer` integration. We can use syntax which looks like we are modifying the state object directly, though in actuality, it is not. It is being converted to a new object by Immer behind the scenes.
+
+So,
+
+```
+addItem: (state,action) => {
+  state.items.push("pizza")
+}
+```
+
+gets converted to the following by Immer behind the scenes:
+
+```
+addItem: (state,action) =>{
+  const newItemList = state.items;
+  newItemList.push("pizza");
+  return {
+    ...state, items: newItemList
+  }
+}
+```
+
+However, `RTK` also gives us the flexibility to directly return the new state object, if we want to. So, writing the syntax below directly in `RTK` will also work:
+
+```
+addItem: (state,action) =>{
+  const newItemList = state.items;
+  newItemList.push("pizza");
+  return {
+    ...state, items: newItemList
+  }
+}
+```
+
+Let's also learn how we can inspect the state object, if we want to do so for debugging etc
+
+We cannot directly print the state object or any of its properties like `state.items`, because it will return a proxy object. Redux internally uses a proxy object in its internal implementation. In order to get a human readable version of the state, we need to use `current` from `@reduxjs/toolkit`. Refer the [documentation](https://redux-toolkit.js.org/api/other-exports) for more information. 
+
+Following is the syntax to print the state object:
+
+```
+import {current, createSlice} from "@reduxjs/toolkit" ;
+
+const cartSlice = createSlice({
+  name: 'cart',
+  initialState: [items: ["pizza"] ],
+  reducers: {
+    addItem: (state,action) => {
+      state.items.push(action.payload);
+      console.log('state items is', current(state))
+    } 
+  }
+})
+```
+
+See the screenshot below:
+
+![Current-state-redux](./Current-state-redux.png)
+
+**Part 8 Redux DevTools**
+
+Redux DevTools is a chrome extension which is used for debugging the Redux state management library, used along with React in our frontend app.
+
+Let's perform a task of adding 3 restauarants to the cart, removing an item from the item and then clearing the entire cart, and see what Redux DevTools has to offer us:
+
+![Redux-DevTools-Actions](./Redux-DevTools-Actions.png)
+
+We can see that followed by the `state being initialized`, we can see the various actions getting dispatched like `cart/addItem`, `cart/removeItem` and `cart/clearCart`. The syntax for the action is `sliceName/actionName`.
+
+![Redux-DevTools-Replay-actions](./Redux-DevTools-Replay-actions.png)
+
+Redux also gives the functionality to replay actions step by step, which can greatly help in debugging. We also have the option to jump to a specific action or skip an action while performing a replay.
+
+![Redux-DevTools-action-payload](./Redux-DevTools-action-payload.png)
+
+Using `Redux DevTools`, we can see the payload with which the action is getting dispatched. In the screenshot above, `addItem` action is being dispatched with the payload of the card information.
+
+![Redux-DevTools-action-diff](./Redux-DevTools-action-diff.png)
+
+Redux allows us to see the diff of the current action with respect to the previous state of the store. In the screenshot above, on dispatching the `removeItem` action, we can see the third item being removed from the cart, as a diff between the state of the store after and before dispatching the action.
+
+![Redux-DevTools-trace.png](./Redux-DevTools-trace.png)
+
+Redux allows to see the stack trace of where the action was dispatched from. In the screenshot above, we can see the entire stack trace where the `clearCart` action is being dispatched from. 
+
+![Redux-DevTools-test.png](./Redux-DevTools-test.png)
+
+Redux also helps us with test(s) for the reducers, as can be seen with the screenshot above.

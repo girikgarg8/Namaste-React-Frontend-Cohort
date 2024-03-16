@@ -1,11 +1,11 @@
-import { SWIGGY_RESTAURANTS_API_URL } from "../../utils/constants.js";
+import { SWIGGY_RESTAURANTS_API_URL } from "../utils/constants.js";
 import RestaurantCard, { withTopRatedLabel } from "./RestaurantCard.js";
 import { useEffect, useState } from "react";
-import resList from "../../utils/mockData.js";
+import resList from "../utils/mockData.js";
 import { Breathing } from "react-shimmer";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
-import UserContext from "../../utils/UserContext.js";
+import UserContext from "../utils/UserContext.js";
 import Footer from "./Footer.js";
 
 const Body = () => {

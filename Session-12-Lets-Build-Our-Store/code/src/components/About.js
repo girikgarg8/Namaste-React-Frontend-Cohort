@@ -1,7 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import UserContext from "../../utils/UserContext.js";
+import UserContext from "../utils/UserContext.js";
 import WaveBye from "../assets/Wave-Bye-Sticker.gif";
 import Footer from "./Footer.js";
 
@@ -12,7 +12,7 @@ class About extends React.Component {
   componentDidMount() {}
   componentDidUpdate() {}
   componentWillUnmount() {}
-  
+
   render() {
     return (
       <div className="about-container">

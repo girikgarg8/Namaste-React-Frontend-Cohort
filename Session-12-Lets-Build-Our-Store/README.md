@@ -6,13 +6,15 @@ In case the Swiggy API contract to fetch the list of restaurants/ Cloudinary CDN
 
 We are using an API to get the restauarant menu from Swiggy API which can be found here [Swiggy Restaurants Menu API](./code/utils/constants.js). In case this API contract changes, please make the changes here [RestaurantMenu](./code/src/components/RestaurantMenu.js), [MenuCategory](./code/src/components/MenuCategory.js) and [ItemList](./code/src/components/ItemList.js)
 
-Please note that we might need to enable `Allow CORS` extension in the browser to see the live link, as Swiggy API sometimes reads the User Agent of the host machine and sends a different API response than for the desktop view.
 
 # Session 12 of Namaste React course:
 
 ## Topics covered in this session:
 
+- Redux store
+- react-redux
 
+> **Note:** **_Please enable CORS on your browser before accessing the application. Download the [Allow CORS](https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf?hl=en) extension._**
 
 ### **Live Link: [here](https://foodvilla-girik-garg.netlify.app/)**
 

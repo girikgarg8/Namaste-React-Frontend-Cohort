@@ -63,5 +63,5 @@
 
 ## Session 12 :
 
-- ### :green_book: [Theory Assignment](./Session-12/theory/)
-- ### :man_technologist: [Coding Assignment](./Session-12/code/)
+- ### :green_book: [Theory Assignment](./Session-12-Lets-Build-Our-Store/theory)
+- ### :man_technologist: [Coding Assignment](./Session-12-Lets-Build-Our-Store/code)

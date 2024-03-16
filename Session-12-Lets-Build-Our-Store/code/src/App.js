@@ -9,7 +9,7 @@ import Contact from "./components/Contact";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
 import { Provider } from "react-redux";
-import appStore from "../store/appStore";
+import appStore from "./store/appStore";
 import Cart from "./components/Cart";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import {
   ENABLE_DESKTOP_VIEW_SWIGGY_RESTAURANT_MENU_API,
   SWIGGY_RESTAURANTS_MENU_API_URL,
-} from "../../utils/constants";
+} from "../utils/constants";
 import Loader from "react-spinner-loader";
 import MenuCategory from "./MenuCategory";
 

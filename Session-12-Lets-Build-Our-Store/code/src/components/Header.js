@@ -1,4 +1,4 @@
-import { LOGO_URL } from "../../utils/constants";
+import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 

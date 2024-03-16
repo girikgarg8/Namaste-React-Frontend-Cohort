@@ -1,4 +1,4 @@
-import { CLOUDINARY_CDN_URL } from "../../utils/constants.js";
+import { CLOUDINARY_CDN_URL } from "../utils/constants.js";
 
 const RestaurantCard = (props) => {
   const { resData } = props;

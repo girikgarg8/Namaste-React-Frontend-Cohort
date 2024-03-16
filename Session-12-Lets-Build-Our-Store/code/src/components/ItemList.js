@@ -1,7 +1,7 @@
-import { AccordionImageContainer, AccordionOuter } from "../../styles.js";
-import { CLOUDINARY_CDN_URL } from "../../utils/constants";
+import { AccordionImageContainer, AccordionOuter } from "../styles.js";
+import { CLOUDINARY_CDN_URL } from "../utils/constants.js";
 import { useDispatch } from "react-redux";
-import { addItem, removeItem } from "../../slice/cartSlice";
+import { addItem, removeItem } from "../slice/cartSlice.js";
 
 const ItemList = ({ items, isAdded }) => {
   const dispatch = useDispatch();
