@@ -1,7 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import UserContext from "../../utils/UserContext.js";
+import UserContext from "../utils/UserContext.js";
 import WaveBye from "../assets/Wave-Bye-Sticker.gif";
 import Footer from "./Footer.js";
 
@@ -12,10 +12,10 @@ class About extends React.Component {
   componentDidMount() {}
   componentDidUpdate() {}
   componentWillUnmount() {}
-  
+
   render() {
     return (
-      <div className="app">
+      <div className="about-container" data-testid="about">
         <UserContext.Consumer>
           {(userInfo) => (
             <h2 className="about-heading"> Hello {userInfo.userName} ! 👋</h2>
@@ -29,12 +29,13 @@ class About extends React.Component {
           <a href="https://www.linkedin.com/in/girik-garg" target="_blank">
             <FontAwesomeIcon
               icon={faLinkedin}
+              data-testid="linkedin-icon"
               className="about-linkedin-icon"
             />
           </a>
         </p>
         <div className="about-wave-bye-container">
-          <img src={WaveBye} className="about-wave-bye" />
+          <img src={WaveBye} className="about-wave-bye" alt="wave-bye" />
         </div>
         <Footer />
       </div>

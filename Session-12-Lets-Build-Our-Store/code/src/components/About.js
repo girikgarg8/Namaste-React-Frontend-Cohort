@@ -22,7 +22,7 @@ class About extends React.Component {
           )}
         </UserContext.Consumer>
         <p className="about-text">
-          This is Namaste Villa, a food ordering platform designed by Girik Garg
+          This is Food Villa, a food ordering platform designed by Girik Garg
         </p>
         <p className="about-linkedin">
           Feel free to connect with me on{" "}

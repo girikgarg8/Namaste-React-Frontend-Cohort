@@ -63,7 +63,7 @@ Let's understand this with a usecase: I want that when I visit the `/about` rout
     <Header />
     <h2 className="about-heading"> Hello there! 👋</h2>
     <p className="about-text">
-        This is Namaste Villa, a food ordering platform designed by Girik Garg
+        This is Food Villa, a food ordering platform designed by Girik Garg
     </p>
     <p className="about-linkedin">
         Feel free to connect with me on{" "}

@@ -1,0 +1,508 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.top-header {
+  display: flex;
+  background-color: #15605e;
+  color: #fff;
+  padding: 32px;
+  justify-content: space-between;
+  @media (max-width: 1000px) {
+    flex-direction: column;
+    padding-bottom: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+.logo {
+  height: 100px;
+  @media (max-width: 1000px) {
+    display: block;
+    margin: auto;
+  }
+}
+
+.heading {
+  @media (min-width: 1001px) {
+    padding-left: 19%;
+    padding-right: 10%;
+    padding-top: 20px;
+  }
+  @media (max-width: 1000px) {
+    display: none;
+  }
+}
+.nav-items {
+  @media (min-width: 1001px) {
+    margin-top: 30px;
+    margin-left: 20px;
+  }
+  @media (max-width: 1000px) {
+    margin-top: 20px;
+    width: 100%;
+  }
+}
+.nav-items ul {
+  display: flex;
+  gap: 19px;
+  padding: 0;
+  @media (max-width: 1000px) {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+.nav-items ul a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.nav-items ul a:hover {
+  color: #aaff00;
+}
+
+.res-container {
+  width: 90%;
+  margin: 40px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  padding-bottom: 50px;
+}
+
+.res-container a {
+  text-decoration: none;
+  color: black;
+}
+
+.res-card {
+  padding: 16px;
+  width: 200px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px 0 gray;
+}
+
+.restaurant-card-top-rated-label {
+  position: absolute;
+  background-color: black;
+  color: white;
+  font-size: 12px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.res-card:hover {
+  cursor: pointer;
+  border: 1px solid black;
+}
+.res-logo {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.search {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 25px;
+}
+
+.search-btn {
+  width: 85%;
+  height: 25px;
+  text-align: center;
+  cursor: text;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.filter {
+  display: flex;
+  justify-content: center;
+  margin: 32px 0 0 32px;
+  @media (min-width: 1001px) {
+    padding-right: 2.5%;
+  }
+  @media (max-width: 1000px) {
+    padding-right: 7%;
+  }
+}
+
+.filter-btn-selected {
+  background-color: #aaff00;
+  cursor: pointer;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border: 1px solid black;
+  border-radius: 3px;
+}
+
+.filter-btn-not-selected {
+  background-color: #f0f0f0;
+  cursor: pointer;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border: 1px solid black;
+  border-radius: 3px;
+}
+
+.shimmer-container {
+  width: 90%;
+  margin: 77px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+
+.shimmer-card {
+  padding: 16px;
+  width: 200px;
+  border-radius: 5px;
+}
+
+.about-container{
+  padding-bottom: 3.5rem;
+}
+
+.about-heading {
+  text-align: center;
+  padding-top: 20px;
+  padding-right: 5%;
+}
+
+.about-text {
+  text-align: center;
+  padding-top: 15px;
+  padding-left: 5%;
+  padding-right: 6.5%;
+  font-size: 20px;
+}
+
+.about-linkedin {
+  text-align: center;
+  padding-top: 15px;
+  padding-left: 5%;
+  padding-right: 9%;
+  font-size: 20px;
+}
+
+.about-linkedin-icon {
+  height: 20px;
+  width: 20px;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 45px;
+  background-color: #15605e;
+  color: white;
+}
+
+.about-wave-bye-container {
+  padding-top: 60px;
+  display: flex;
+  justify-content: center;
+}
+
+.about-wave-bye {
+  width: 280px;
+  height: 10%;
+}
+
+.not-found-container {
+  padding-top: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.not-found-text {
+  font-size: 25px;
+  text-align: center;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.not-found-redirection {
+  margin-top: 0px;
+  font-size: 20px;
+  text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.not-found-redirection a {
+  text-decoration: none;
+}
+.not-found-img {
+  width: 100%;
+  height: 100%;
+  max-width: 450px;
+  max-height: 450px;
+}
+
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 3.5rem;
+}
+
+.contact-heading {
+  text-align: center;
+  font-size: 28px;
+  padding-right: 5%;
+}
+
+.contact-lets-connect {
+  font-size: 24px;
+  padding-right: 5%;
+  margin-top: 10px;
+  @media (max-width: 1000px) {
+    padding-left: 4%;
+    padding-right: 8%;
+  }
+}
+
+.contact-container ul {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0px;
+  padding-top: 0px;
+  padding-right: 25px;
+  padding-left: 25px;
+}
+
+.contact-container ul li {
+  @media (min-width: 1001px) {
+    padding-right: 90px;
+  }
+  text-align: center;
+  font-size: 18px;
+  margin-top: 30px;
+}
+
+.contact-footer-icon {
+  @media (min-width: 1001px) {
+    padding-top: 30px;
+    padding-right: 8%;
+    width: 310px;
+  }
+  padding-top: 30px;
+  width: 290px;
+  height: 150px;
+}
+
+.error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.error-heading {
+  @media (min-width: 1001px) {
+    padding-right: 5%;
+  }
+}
+
+.error-message {
+  @media (min-width: 1001px) {
+    padding-right: 6%;
+  }
+}
+
+.error-not-found-redirection {
+  margin-top: 20px;
+  font-size: 20px;
+  text-align: center;
+  @media (max-width: 1000px) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  @media (min-width: 1001px) {
+    padding-right: 40px;
+  }
+}
+
+.error-not-found-redirection a {
+  text-decoration: none;
+}
+
+.menu {
+  text-align: center;
+  margin-bottom: 3.2rem;
+}
+
+.menu-restaurant-title {
+  font-weight: bold;
+  margin-top: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.menu-cuisines {
+  font-weight: bold;
+  font-size: 1.125rem;
+}
+
+.accordion-header {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  background-color: rgb(249 250 251);
+  padding: 1rem;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+.accordion-body {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  user-select: none;
+}
+
+.accordion-header-title {
+  font-weight: bold;
+}
+
+.menu-item {
+  padding: 0.5rem;
+  margin: 0.5rem;
+  border-bottom: 2px solid rgb(229 231 235);
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu-header {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.accordion-body-description {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+.accordion-image {
+  width: 100%;
+  @media (max-width: 650px) {
+    display: none;
+  }
+}
+
+.accordion-button-add {
+  @media (max-width: 650px) {
+    margin: auto;
+  }
+  border: 1px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.accordion-button-add:active{
+  background-color: lightgreen;
+}
+
+
+.accordion-button-delete {
+  @media (max-width: 650px) {
+    margin: auto;
+  }
+
+  border: 1px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.accordion-button-delete:active {
+  background-color: #fa8072
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-prompt {
+  margin-top: 3rem;
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+.login-button-input {
+  margin-top: 2rem;
+  height: 20px;
+  font-size: 20px;
+  padding: 4px 7px;
+  font-size: 16px;
+}
+
+.login-button-submit {
+  margin-top: 2.5rem;
+  height: 25px;
+  background-color: #e7e7e7;
+  color: black;
+  border: 1px solid black;
+  border-radius: 2px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.cart-container {
+  text-align: center;
+  margin-top: 1rem;
+  padding: 1rem;
+  margin-bottom: 3.2rem;
+}
+
+.cart-heading {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: bold;
+
+}
+
+.cart-items{
+  width: 50%;
+  margin: auto;
+  @media (max-width: 650px){
+    width: 85%;
+  }
+}
+
+.cart-heading-container{
+  display: flex;
+  justify-content: center;
+}
+
+.clear-cart{
+  margin-top: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+.clear-cart:active {
+  background-color: #fa8072
+}
