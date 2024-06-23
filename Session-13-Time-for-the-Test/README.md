@@ -9,6 +9,22 @@ FoodVilla is an online food ordering app, which integrates with Swiggy APIs to f
 - Tailwind CSS
 - Jest
 
+## Screenshots
+
+![Foodvilla-Welcome](./Foodvilla-Welcome.png)
+
+
+![FoodVilla-Homepage](./Foodvilla-Homepage.png)
+
+
+![FoodVilla-Restaurant-Menu](./FoodVilla-Restaurant-Menu.png)
+
+
+![FoodVilla-Cart](./FoodVilla-Cart.png)
+
+
+![FoodVilla-About-Us](./FoodVilla-About-Us.png)
+
 ## Other details 
 
 The high level design is here: ![High-Level-Diagram-Food-Villa](../High-Level-Design-Food-Villa.png)
